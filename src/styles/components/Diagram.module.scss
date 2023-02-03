@@ -1,0 +1,121 @@
+@import '../base/base.scss';
+
+.diagram {
+  @include flex-row;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  @media (max-width: 768px) {
+    width: 100%;
+    @include flex-column;
+    justify-content: flex-end;
+  }
+  //padding: 50px;
+  &__title {
+    width: 150px;
+    padding: 20px 0;
+    @media (max-width: 768px) {
+      @include flex-column;
+      justify-content: center;
+      height: 70px;
+      width: 130px;
+      padding: 0;
+    }
+    @media (max-width: 576px) {
+      width: 100%;
+    }
+    &_name {
+      font-size: 28px;
+      letter-spacing: 2.5px;
+      margin: 10px 0;
+      @media (max-width: 768px) {
+        font-size: 22px;
+        letter-spacing: 1px;
+        padding: 0;
+      }
+      @media (max-width: 576px) {
+        font-size: 18px;
+      }
+      @media (max-width: 380px) {
+        font-size: 14px;
+        letter-spacing: 0px;
+        }
+    }
+  }
+
+  &__icon {
+    position: relative;
+    width: 140px;
+    height: 40px;
+    margin: 10px;
+    @media (max-width: 768px) {
+      width: 120px;
+      height: 40px;
+      margin: 10px;
+    }
+    @media (max-width: 576px) {
+      width: 82px;
+      height: 25px;
+      margin: 10px 1px;
+    }
+    @media (max-width: 380px) {
+      width: 60px;
+      height: 20px;
+    }
+    
+    & img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      object-fit: contain;
+    }
+  }
+
+  &__chart {
+    @include flex-row;
+    justify-content: flex-start;
+    width: calc(100% - 310px);
+    height: 135px;
+    border-left: 4px solid $input-range;
+    border-bottom: none;
+    @media (max-width: 768px) {
+      @include flex-column;
+      flex-direction: column-reverse;
+      justify-content: flex-start;
+      width: 100%;
+      height: 300px;
+      border-left: none;
+      border-bottom: 4px solid $input-range;
+    }
+    &_dia {
+      height: 36px;
+      width: 15px; // value
+      @include border;
+      border-left: none;
+      background-color: $primary;
+      @media (max-width: 768px) {
+        width: 36px;
+        height: 15px;
+        @include border;
+        border-bottom: none;
+      }
+    }
+
+    &_value {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 10px;
+      @media (max-width: 768px) {
+        font-size: 22px;
+        rotate: -90deg;
+        margin-bottom: 26px;
+      }
+    }
+
+  }
+}
+
+.radio {
+  display: block;
+}

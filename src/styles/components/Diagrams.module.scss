@@ -1,0 +1,10 @@
+@import '../base/base.scss';
+
+.diagrams {
+  padding: 0 50px;
+}
+.wrapper {
+  @media (max-width: 768px) {
+    @include flex-row;
+  }
+}

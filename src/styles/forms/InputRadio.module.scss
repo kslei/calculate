@@ -1,0 +1,76 @@
+@import '../base/base.scss';
+
+.inputs {
+  @include flex-row;
+  justify-content: flex-start;
+}
+
+.form_radio_hidden {
+  display: flex;
+  flex-direction: row;
+  height: 16px;
+  position: relative;
+  align-items: center;
+  @media (max-width: 576px) {
+    height: 12px;
+  }
+  @media (max-width: 380px) {
+    flex-direction: column;
+    height: 20px;
+  }
+  & input {
+    position: absolute;
+    opacity: 0;
+    display: block;
+    height: 0;
+    width: 0;
+    &:checked + .radio {
+      background-color: $base;
+      border-width: 6px;
+      cursor: default;
+      @media (max-width: 576px) {
+      border-width: 4px;
+      }
+    }
+  }
+  & .radio {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: inline-block;
+    position: relative;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    margin: 0 3px;
+    @include border;
+    background-color: $base;
+    cursor: pointer;
+    outline: none;
+    box-sizing: border-box;
+    transition: .5s all;
+    @media (max-width: 576px) {
+      height: 12px;
+      width: 12px;
+      margin: 0 1px;
+    }
+    @media (max-width: 380px) {
+      height: 10px;
+      width: 10px;
+    }
+    &:hover {
+      background-color: $hover;
+    }
+  }
+}
+.text {
+  font-size: 14px;
+  margin-right: 8px;
+  @media (max-width: 576px) {
+    font-size: 12px;
+    margin-right: 1px;
+  }
+  @media (max-width: 380px) {
+    font-size: 10px;
+  }
+}

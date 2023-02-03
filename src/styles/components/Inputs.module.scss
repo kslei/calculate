@@ -1,0 +1,21 @@
+@import '../base/base.scss';
+
+.inputs {
+  padding: 80px 50px;
+  @include flex-row;
+  font-size: 28px;
+  letter-spacing: 3px;
+  height: 33%;
+  @media (max-width: 768px) {
+    padding: 20px 50px;
+  }
+  @media (max-width: 576px) {
+    padding: 20px 0;
+  }
+}
+.wrapper {
+  @include flex-row;
+  @media (max-width: 768px) {
+    @include flex-column;
+  }
+}

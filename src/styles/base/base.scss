@@ -1,0 +1,67 @@
+@import './_null.scss';
+@import './_fonts.scss';
+
+$min: violet;
+$primary: grey;
+$input-range: black;
+$base: white;
+$hover: #d3d3d3;
+
+@mixin border {
+  border: 1px solid #000;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+body {
+  @include flex-column;
+  min-height: 100vh;
+  font-family: "Roboto-Regular", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.wrapper {
+  width: calc(100% - 10px);
+
+  @media (min-width: 576px) {
+    width: 540px;
+  }
+
+  @media (min-width: 768px) {
+    width: 720px;
+  }
+
+  @media (min-width: 992px) {
+    width: 960px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 1140px;
+  }
+
+  @media (min-width: 1400px) {
+    width: 1320px;
+  }
+}
+.container {
+  min-width: 100vh;
+  @include flex-column;
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
+  
+}

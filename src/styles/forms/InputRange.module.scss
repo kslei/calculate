@@ -1,0 +1,80 @@
+@import '../base/base.scss';
+
+.input {
+  @include flex-column;
+  align-items: flex-start;
+  @media (max-width: 768px) {
+    margin: 10px;
+  }
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+input[type="range"] {
+  position: relative;
+  margin: 25px 0;
+  width: 380px;
+  height: 28px;
+  border-left: 4px solid $input-range;
+  border-right: 4px solid $input-range;
+
+  @media (max-width: 1200px) {
+    width: 320px;
+  }
+  @media (max-width: 992px) {
+    width: 240px;
+  }
+  @media (max-width: 768px) {
+    width: 320px;
+  }
+  @media (max-width: 380px) {
+    width: 240px;
+  }
+  
+  &::-webkit-slider-runnable-track {
+    background: $input-range;
+    width: 380px;
+    height: 4px;
+  }
+
+  &::-moz-range-track {
+    background: $input-range;
+    width: 380px;
+    height: 4px;
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 36px;
+    margin-top: -16px;
+    background-color: $input-range;
+  }
+
+  &::before {
+    position: absolute;
+    content: "0";
+    font-size: 22px;
+    top: 28px;
+    left: -8px;
+  }
+
+  &::after {
+    position: absolute;
+    content: "1000";
+    font-size: 22px;
+    top: 28px;
+    right: -26px;
+  }
+}
+
+.output {
+  font-weight: 700;
+}
