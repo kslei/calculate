@@ -34,6 +34,9 @@ input[type="range"] {
   @media (max-width: 768px) {
     width: 320px;
   }
+  @media (max-width: 560px) {
+    margin: 14px 0;
+  }
   @media (max-width: 380px) {
     width: 240px;
   }
@@ -62,16 +65,26 @@ input[type="range"] {
     position: absolute;
     content: "0";
     font-size: 22px;
+    color: $input-range;
     top: 28px;
     left: -8px;
+    @media (max-width: 560px) {
+      font-size: 18px;
+      left: -6px;
+      }
   }
 
   &::after {
     position: absolute;
     content: "1000";
     font-size: 22px;
+    color: $input-range;
     top: 28px;
     right: -26px;
+    @media (max-width: 560px) {
+      font-size: 18px;
+      right: -22px;
+    }
   }
 }
 

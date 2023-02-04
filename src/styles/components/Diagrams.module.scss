@@ -2,6 +2,14 @@
 
 .diagrams {
   padding: 0 50px;
+  height: calc(100vh - 266px);
+  @media (max-width: 768px) {
+    @include flex-column;
+    height: 450px;
+  }
+  @media (max-width: 560px) {
+    height: 420px;
+  }
 }
 .wrapper {
   @media (max-width: 768px) {
