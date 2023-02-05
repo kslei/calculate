@@ -53,12 +53,21 @@ input[type="range"] {
     height: 4px;
   }
 
+
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 18px;
     height: 36px;
     margin-top: -16px;
     background-color: $input-range;
+  }
+  &::-moz-range-thumb {
+    width: 18px;
+    height: 36px;
+    margin-top: -16px;
+    background-color: $input-range;
+    border: $input-range;
+    border-radius: 0px;
   }
 
   &::before {
